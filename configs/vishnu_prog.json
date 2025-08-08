@@ -1,0 +1,39 @@
+{
+    "Experiment": {
+        "name": "vishnu_prog",
+        "dataset_path": "./experiments/vishnu_prog"
+    },
+
+    "TensorBase":{
+        "density_n_comp": 8,
+        "appearance_n_comp": 24,
+        "app_dim": 27,
+        "density_shift": -10,
+        "alphaMask_thres": 0.001,
+        "distance_scale": 25,
+        "rayMarch_weight_thres": 0.0001,
+        "fea2denseAct": "softplus",
+        "step_ratio": 2.0,
+        "shadingMode": "MLP_Fea",
+        "pos_pe": 6,
+        "view_pe": 6,
+        "fea_pe": 6,
+        "featureC": 128
+    },
+
+    "Training": {
+        "n_iters": 30000,
+        "batch_size": 4096,
+        "N_voxel_init": 2097152,
+        "N_voxel_final": 27000000,
+        "upsamp_list": [2000, 3000, 4000, 5500, 7000],
+        "update_AlphaMask_list": [2000, 4000],
+        "lr_init": 0.02,
+        "lr_basis": 0.001,
+        "lr_decay_iters": -1,
+        "lr_decay_target_ratio": 0.1,
+        "lr_upsample_reset": 1,
+        "eval_on_iter": [100, 1000, 2000, 3000, 4000, 5500, 7000, 10000, 15000, 20000, 25000, 30000],
+        "progressive": true
+    }
+}
